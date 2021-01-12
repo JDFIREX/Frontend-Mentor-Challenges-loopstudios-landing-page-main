@@ -104,17 +104,19 @@ body{
 
 header{
   @include Setposition(relative, 0, 0);
-  @include display(column, flex-start, flex-start);
+  @include display(column, center, flex-start);
   width: 100%;
   height: 40.5rem;
   .hero_img{
     @include Setposition(absolute, 0, 0);
     width: 100%;
     height: 100%;
+    max-width: 1920px;
   }
   .nav{
     width: 100%;
     padding: 4.5vw 11.5vw;
+    max-width: 1800px;
     @include display(row, center, space-between);
     .nav_logo{
       z-index: 2;
@@ -135,7 +137,7 @@ header{
     }
   }
   .title{
-    @include Setposition(relative,  4rem,  10.2rem);
+    @include Setposition(absolute,  14rem,  10.2rem);
     width: 40.9rem;
     height: 17.5rem;
     border: 3px solid $White;
@@ -150,9 +152,11 @@ header{
 main{
   width: 100%;
   padding:11.5vw;
+  @include display(column,center,center);
   .leader{
     @include Setposition(relative, 0, 0);
     width: 100%;
+    max-width: 1110px;
     .leader_art{
       @include Setposition(absolute, 36%, 51%);
       padding: 6rem 0rem 6rem 6rem;
@@ -178,6 +182,7 @@ main{
     @include display(column, center, center);
     margin-top: 11rem;
     width: 100%;
+    max-width: 1110px;
     .creations_art_header{
       @include display(flex, center, space-between);
       width: 100%;
@@ -197,12 +202,13 @@ main{
       }
     }
     .creations_grid{
-      @include display(row, flex-start, space-between);
-      flex-wrap: wrap;
+      display: grid;
+      grid-gap: .5rem;
+      justify-content: space-between;
+      grid-template-columns: repeat(auto-fill, 16.2rem);
       margin-top: 5rem;
       width: 100%;
       .grid_item{
-        margin-right: .5rem;
         margin-bottom: 1.2rem;
         width: 16.2rem;
         @include Setposition(relative, 0, 0);

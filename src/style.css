@@ -97,9 +97,9 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -113,11 +113,13 @@ header .hero_img {
   left: 0;
   width: 100%;
   height: 100%;
+  max-width: 1920px;
 }
 
 header .nav {
   width: 100%;
   padding: 4.5vw 11.5vw;
+  max-width: 1800px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,8 +170,8 @@ header .nav .nav_options .nav_option:nth-child(5) {
 }
 
 header .title {
-  position: relative;
-  top: 4rem;
+  position: absolute;
+  top: 14rem;
   left: 10.2rem;
   width: 40.9rem;
   height: 17.5rem;
@@ -187,6 +189,19 @@ header .title .title_h {
 main {
   width: 100%;
   padding: 11.5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 main .leader {
@@ -194,6 +209,7 @@ main .leader {
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 1110px;
 }
 
 main .leader .leader_art {
@@ -242,6 +258,7 @@ main .Creations {
           justify-content: center;
   margin-top: 11rem;
   width: 100%;
+  max-width: 1110px;
 }
 
 main .Creations .creations_art_header {
@@ -282,27 +299,19 @@ main .Creations .creations_art_header button {
 }
 
 main .Creations .creations_grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: .5rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-grid-columns: (16.2rem)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 16.2rem);
   margin-top: 5rem;
   width: 100%;
 }
 
 main .Creations .creations_grid .grid_item {
-  margin-right: .5rem;
   margin-bottom: 1.2rem;
   width: 16.2rem;
   position: relative;
