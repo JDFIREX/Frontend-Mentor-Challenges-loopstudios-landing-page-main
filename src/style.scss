@@ -71,10 +71,27 @@ $VeryDarkGray: hsl(0, 0%, 41%);
   color : $c;
 }
 
+@mixin before {
+  position: relative;
+  &::before{
+    position: absolute;
+    content: '';
+    bottom: -45%;
+    left: 50%;
+    min-width: 0%;
+    height: 3px;
+    transition: .3s all ease-in-out;
+    transform-origin: right;
+    border-radius: 9in;
+    background-color: $White;
+  }
+}
+
+
 // 
 
-.atrribution_div{width: 100vw; position: fixed; bottom: 2vw; left : 10px; color: black;z-index: 2000000000000000;}
-.attribution { font-size: 11px; text-align: center; }
+.atrribution_div{width: 100vw; position: fixed; bottom: 2vw; left : 10px; color: red;z-index: 2000000000000000;}
+.attribution { font-size: 1rem;font-weight: bold; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
 // 
@@ -114,10 +131,10 @@ header{
     max-width: 1920px;
   }
   .nav{
+    @include display(row, center, space-between);
     width: 100%;
     padding: 4.5vw 11.5vw;
     max-width: 1800px;
-    @include display(row, center, space-between);
     .nav_logo{
       z-index: 2;
       width: 12rem;
@@ -125,14 +142,21 @@ header{
     .nav_options{
       @include display(row, center, flex-end);
       z-index: 2;
-
       .nav_option{
+        @include before();
         @include Alata();
         @include font(1rem, $White);
-        margin: 0 .9rem;
-      }
-      .nav_option:nth-child(5){
-        margin-right: 0;
+        margin: 0 .9rem .9rem;
+        transition: .3s all ease-in-out;
+        &:nth-child(5){
+          margin-right: 0;
+        }
+        &:hover{
+          &::before{
+            left: 25%;
+            min-width: 50%;
+          }
+        }
       }
     }
   }
@@ -150,9 +174,10 @@ header{
 }
 
 main{
+  @include display(column,center,center);
   width: 100%;
   padding:11.5vw;
-  @include display(column,center,center);
+  padding-bottom: 11.2vw;
   .leader{
     @include Setposition(relative, 0, 0);
     width: 100%;
@@ -167,9 +192,9 @@ main{
         @include font(3rem, $Black);
       }
       p{
-        width: 100%;
         @include Alata();
         @include font(.95rem, $DarkGray);
+        width: 100%;
         line-height: 1.5rem;
         margin-top: 1.8rem
       }
@@ -191,39 +216,129 @@ main{
         @include font(3rem, $Black);
       }
       button{
+        @include Alata();
+        @include font(1rem, $Black);
         padding: .5rem 2.5rem;
         text-align: center;
         border: 1px solid $Black;
-        @include Alata();
-        @include font(1rem, $Black);
         background-color: $White;
         letter-spacing: .2rem;
         border-radius: .1rem;
+        transition: all .3s ease-in-out;
+        &:hover{
+          @include font(1rem, $White);
+          background-color: $Black;
+        }
       }
     }
     .creations_grid{
       display: grid;
       grid-gap: .5rem;
       justify-content: space-between;
-      grid-template-columns: repeat(auto-fill, 16.2rem);
+      grid-template-columns: repeat(auto-fill, 16rem);
       margin-top: 5rem;
       width: 100%;
       .grid_item{
-        margin-bottom: 1.2rem;
-        width: 16.2rem;
         @include Setposition(relative, 0, 0);
+        margin-bottom: 1.2rem;
+        width: 16rem;
+        transition: all .2s ease-in-out;
         img{
           width: 100%;
+          transition: all .2s ease-in-out;
         }
         h3{
+          @include Josefin();
+          @include font(2rem, $White);
           position: absolute;
           bottom: 2.4rem;
           width: 100%;
           padding: 0 2.5rem;
-          @include Josefin();
-          @include font(2rem, $White);
+          transition: all .2s ease-in-out;
+        }
+        &:hover{
+          img{
+            filter: contrast(.2) brightness(1.5);
+          }
+          h3{
+            @include font(2rem, $Black);
+            z-index: 20000;
+          }
         }
       }
+    }
+  }
+}
+
+footer{
+  @include Setposition(relative,0,0);
+  @include display(column,flex-start,flex-start);
+  width: 100%;
+  padding: 3vw 11.5vw;
+  background-color: $Black;
+  .media{
+    @include display(row,flex-start,space-between);
+    width: 100%;
+    .media_logo{
+      width: 9rem;
+    }
+    .social{
+      @include display(row,center,flex-end);
+      .social_icon{
+        @include before();
+        width: 1.6rem;
+        height: 1.6rem;
+        margin: 0 .45rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto auto;
+        &:nth-child(1){
+          background-image: url("/images/icon-facebook.svg");
+        }
+        &:nth-child(2){
+          background-image: url("/images/icon-twitter.svg");
+        }
+        &:nth-child(3){
+          background-image: url("/images/icon-pinterest.svg");
+        }
+        &:nth-child(4){
+          background-image: url("/images/icon-instagram.svg");
+          margin-right: 0;
+        }
+        &:hover{
+          &::before{
+            left: 0%;
+            min-width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .f_nav{
+    @include display(row,flex-start,space-between);
+    margin-top: 1.8rem;
+    width: 100%;
+    .f_nav_list{
+      @include display(row,center,flex-start);
+      .f_nav_item{
+        @include Josefin();
+        @include font(.9rem, $White);
+        @include before();
+        margin: 0 1.15rem;
+        &:nth-child(1){
+          margin-left: 0;
+        }
+        &:hover{
+          &::before{
+            left: 25%;
+            min-width: 50%;
+          }
+        }
+      }
+    }
+    .copyRight{
+      @include Josefin();
+      @include font(1rem, $DarkGray);
     }
   }
 }
