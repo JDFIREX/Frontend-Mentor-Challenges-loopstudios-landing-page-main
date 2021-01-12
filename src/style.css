@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-button {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-radius: 38px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.atrribution_div {
+  width: 100vw;
+  position: fixed;
+  bottom: 2vw;
+  left: 10px;
+  color: black;
+  z-index: 2000000000000000;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  top: 0;
+  left: 0;
+  font-size: 15px;
+  width: 100%;
+  max-width: 1920px;
+  overflow-x: hidden;
+}
+
+.design {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000000000000000000000000000;
+  opacity: 0.6;
+  display: none;
+}
+
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  height: 40.5rem;
+}
+
+header .hero_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+header .nav {
+  width: 100%;
+  padding: 4.5vw 11.5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .nav .nav_logo {
+  z-index: 2;
+  width: 12rem;
+}
+
+header .nav .nav_options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  z-index: 2;
+}
+
+header .nav .nav_options .nav_option {
+  font-family: 'Alata', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: white;
+  margin: 0 .9rem;
+}
+
+header .nav .nav_options .nav_option:nth-child(5) {
+  margin-right: 0;
+}
+
+header .title {
+  position: relative;
+  top: 4rem;
+  left: 10.2rem;
+  width: 40.9rem;
+  height: 17.5rem;
+  border: 3px solid white;
+  padding: 2.4rem 2.5rem;
+}
+
+header .title .title_h {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 4.5rem;
+  color: white;
+}
+
+main {
+  width: 100%;
+  padding: 11.5vw;
+}
+
+main .leader {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+main .leader .leader_art {
+  position: absolute;
+  top: 36%;
+  left: 51%;
+  padding: 6rem 0rem 6rem 6rem;
+  background-color: white;
+  width: 35rem;
+}
+
+main .leader .leader_art h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  color: black;
+}
+
+main .leader .leader_art p {
+  width: 100%;
+  font-family: 'Alata', sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: #8c8c8c;
+  line-height: 1.5rem;
+  margin-top: 1.8rem;
+}
+
+main .leader .interactive_img {
+  width: 45.5rem;
+}
+
+main .Creations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 11rem;
+  width: 100%;
+}
+
+main .Creations .creations_art_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: flex;
+          flex-direction: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+main .Creations .creations_art_header h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  color: black;
+}
+
+main .Creations .creations_art_header button {
+  padding: .5rem 2.5rem;
+  text-align: center;
+  border: 1px solid black;
+  font-family: 'Alata', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: black;
+  background-color: white;
+  letter-spacing: .2rem;
+  border-radius: .1rem;
+}
+
+main .Creations .creations_grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+main .Creations .creations_grid .grid_item {
+  margin-right: .5rem;
+  margin-bottom: 1.2rem;
+  width: 16.2rem;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+main .Creations .creations_grid .grid_item img {
+  width: 100%;
+}
+
+main .Creations .creations_grid .grid_item h3 {
+  position: absolute;
+  bottom: 2.4rem;
+  width: 100%;
+  padding: 0 2.5rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border: 0px none #ffffff;
+    border-radius: 38px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-track {
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 7px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: #666666;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: #333333;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+//
+
+$White: hsl(0, 0%, 100%);
+$Black: hsl(0, 0%, 0%);
+$DarkGray: hsl(0, 0%, 55%);
+$VeryDarkGray: hsl(0, 0%, 41%);
+
+//
+
+@mixin Setposition($p,$ys,$xs) {
+  position: $p;
+  top : $ys;
+  left : $xs;
+}
+
+@mixin display($d,$a,$j){
+  display: flex;
+  flex-direction: $d;
+  align-items: $a;
+  justify-content: $j;
+}
+
+@mixin Alata {
+  font-family: 'Alata', sans-serif;
+  font-weight: 400;
+}
+
+@mixin  Josefin {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+}
+
+@mixin  font($s,$c) {
+  font-size: $s;
+  color : $c;
+}
+
+// 
+
+.atrribution_div{width: 100vw; position: fixed; bottom: 2vw; left : 10px; color: black;z-index: 2000000000000000;}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+// 
+
+*{
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+}
+body{
+  @include Setposition(relative,0,0);
+  font-size: 15px;
+  width: 100%;
+  max-width: 1920px;
+  overflow-x: hidden
+}
+
+// 
+
+.design{
+  @include Setposition(absolute, 0, 0);
+  z-index: 2000000000000000000000000000;
+  opacity: 0.6;
+  display: none;
+}
+
+// 
+
+header{
+  @include Setposition(relative, 0, 0);
+  @include display(column, flex-start, flex-start);
+  width: 100%;
+  height: 40.5rem;
+  .hero_img{
+    @include Setposition(absolute, 0, 0);
+    width: 100%;
+    height: 100%;
+  }
+  .nav{
+    width: 100%;
+    padding: 4.5vw 11.5vw;
+    @include display(row, center, space-between);
+    .nav_logo{
+      z-index: 2;
+      width: 12rem;
+    }
+    .nav_options{
+      @include display(row, center, flex-end);
+      z-index: 2;
+
+      .nav_option{
+        @include Alata();
+        @include font(1rem, $White);
+        margin: 0 .9rem;
+      }
+      .nav_option:nth-child(5){
+        margin-right: 0;
+      }
+    }
+  }
+  .title{
+    @include Setposition(relative,  4rem,  10.2rem);
+    width: 40.9rem;
+    height: 17.5rem;
+    border: 3px solid $White;
+    padding: 2.4rem 2.5rem;
+    .title_h{
+      @include Josefin();
+      @include font(4.5rem, $White)
+    }
+  }
+}
+
+main{
+  width: 100%;
+  padding:11.5vw;
+  .leader{
+    @include Setposition(relative, 0, 0);
+    width: 100%;
+    .leader_art{
+      @include Setposition(absolute, 36%, 51%);
+      padding: 6rem 0rem 6rem 6rem;
+      background-color: $White;
+      width: 35rem;
+      h2{
+        @include Josefin();
+        @include font(3rem, $Black);
+      }
+      p{
+        width: 100%;
+        @include Alata();
+        @include font(.95rem, $DarkGray);
+        line-height: 1.5rem;
+        margin-top: 1.8rem
+      }
+    }
+    .interactive_img{
+      width: 45.5rem;
+    }
+  }
+  .Creations{
+    @include display(column, center, center);
+    margin-top: 11rem;
+    width: 100%;
+    .creations_art_header{
+      @include display(flex, center, space-between);
+      width: 100%;
+      h2{
+        @include Josefin();
+        @include font(3rem, $Black);
+      }
+      button{
+        padding: .5rem 2.5rem;
+        text-align: center;
+        border: 1px solid $Black;
+        @include Alata();
+        @include font(1rem, $Black);
+        background-color: $White;
+        letter-spacing: .2rem;
+        border-radius: .1rem;
+      }
+    }
+    .creations_grid{
+      @include display(row, flex-start, space-between);
+      flex-wrap: wrap;
+      margin-top: 5rem;
+      width: 100%;
+      .grid_item{
+        margin-right: .5rem;
+        margin-bottom: 1.2rem;
+        width: 16.2rem;
+        @include Setposition(relative, 0, 0);
+        img{
+          width: 100%;
+        }
+        h3{
+          position: absolute;
+          bottom: 2.4rem;
+          width: 100%;
+          padding: 0 2.5rem;
+          @include Josefin();
+          @include font(2rem, $White);
+        }
+      }
+    }
+  }
+}
