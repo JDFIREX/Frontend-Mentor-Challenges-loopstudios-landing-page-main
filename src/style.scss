@@ -95,6 +95,10 @@ $VeryDarkGray: hsl(0, 0%, 41%);
 .attribution a { color: hsl(228, 45%, 44%); }
 
 // 
+html{
+  overflow-x: hidden;
+}
+
 
 *{
   box-sizing: border-box;
@@ -159,9 +163,12 @@ header{
         }
       }
     }
+    .nav_humb{
+      display: none
+    }
   }
   .title{
-    @include Setposition(absolute,  14rem,  10.2rem);
+    @include Setposition(absolute,  15.5vw,  11.5vw);
     width: 40.9rem;
     height: 17.5rem;
     border: 3px solid $White;
@@ -171,6 +178,48 @@ header{
       @include font(4.5rem, $White)
     }
   }
+}
+
+@media only screen and (max-width: 1200px){
+  header{height: 50vw;
+    .nav{padding: 5vw 5vw;}
+    .title{@include Setposition(absolute,  15.5vw,  5vw);}}
+}
+@media only screen and (max-width: 1050px){
+  header{height: 65vw;
+    .title{width: 60vw;height: auto;padding: 4vw 4vw;
+      .title_h{@include font(6.5vw, $White)}}}
+}
+@media only screen and (max-width: 850px){
+  header{
+    .nav{
+      .nav_humb{display: block;width: 1.8rem;height: 1.2rem;z-index: 1;}
+      .nav_options{@include Setposition(fixed, 0, -100vw);@include display(column, flex-start,center);z-index: 2;width: 100%;height: 100%;background-color: $Black;padding: 0vw 5vw;
+        .nav_option{@include Josefin();@include font(3rem, $DarkGray);margin: 1rem 0rem;text-transform: uppercase;
+          &::before{left: 0;bottom: -15%;}
+          &:hover{
+            &::before{left: 0%;min-width: 50%;}}}}}
+    .title{width: 90vw;padding: 4.5vw;
+      .title_h{@include font(8vw, $White)}}}
+}
+@media only screen and (max-width: 700px){
+  header{width: 100%;height: 200vw;max-height: 1200px;padding-top: 8vw;   
+    &::before{content: '';@include Setposition(absolute, 0, 0);width: 100%;height: 100%;background-image: url("/images/mobile/image-hero.jpg");background-position: center;background-size: cover;background-repeat: no-repeat;}
+    .hero_img{z-index: -2;display: none}
+    .nav{
+      .nav_options{
+        .nav_option{@include font(9vw, $DarkGray);margin: 1rem 0rem;}}
+      .nav_humb{display: block;width: 2rem;height: 1.5rem;z-index: 1;}
+      .nav_logo{z-index: 2;width: 15rem;}}
+    .title{top: 40vw;padding: 5vw;
+      .title_h{@include font(12vw, $White)}}}
+}
+@media only screen and (max-width: 500px){
+  header{max-height: 900px;
+    .nav{
+      .nav_options{
+        .nav_option{margin: 1vw 0rem;}}
+      .nav_logo{width: 60vw;}}}
 }
 
 main{
@@ -270,6 +319,84 @@ main{
   }
 }
 
+@media only screen and (max-width: 1200px){
+  main{padding:10vw 5vw;padding-bottom: 10vw;
+    .leader{width: 100%;
+      .leader_art{@include Setposition(absolute, 35%, 40%);padding: 5vw;width: 55vw; // 35rem
+        h2{@include font(2.8rem, $Black);}}
+      .interactive_img{width: 61vw;}}
+    .Creations{margin-top: 15vw;
+      .creations_art_header{
+        button{margin-top: -.9rem;}}
+      .creations_grid{grid-gap: .5vw;grid-template-columns: repeat(auto-fill, 15rem);margin-top: 5vw;
+        .grid_item{width: 15rem;}}}}
+}
+@media only screen and (max-width: 850px){
+  main{
+    .leader{@include display(column,center,center);
+      .leader_art{@include Setposition(relative, 0%, 0%);padding: 5vw 0;width: 100%;@include display(column,center,center);
+        h2{@include font(7vw, $Black);text-align: center}
+        p{@include font(2.25vw, $DarkGray);width: 70vw;line-height: 4vw;margin-top: 2vw;text-align: center;}}
+      .interactive_img{width: 90%;}}
+    .Creations{margin-top: 5vw;
+      .creations_art_header{
+        h2{@include font(6vw, $Black);}
+        button{margin-top: -1.5vw;@include font(2vw, $Black);padding: 1.2vw 5vw;letter-spacing: .5vw;
+          &:hover{@include font(2vw, $White);}}}
+      .creations_grid{grid-gap: .5vw;grid-template-columns: repeat(auto-fill, 15rem);margin-top: 8vw;
+        .grid_item{margin-bottom: 1rem;width: 15rem;}}}}
+}
+@media only screen and (max-width: 808px){
+  main{
+    .Creations{
+      .creations_grid{justify-content: space-around;grid-template-columns: repeat(2, 35vw);
+        .grid_item{width: 35vw;
+          h3{font-size: 4.5vw;}}}}}
+}
+@media only screen and (max-width: 700px){
+  main{
+    .leader{
+      .leader_art{
+        h2{@include font(8.5vw, $Black);}
+        p{@include font(2.75vw, $DarkGray);width: 90vw;line-height: 5vw;margin-top: 2vw;}}
+      .interactive_img{width: 100%;}}
+    .Creations{position: relative;
+      .creations_art_header{
+        h2{width: 100%;text-align: center;@include font(8vw, $Black);}
+        button{position: absolute;bottom: -8vw;margin-top: 0vw;@include font(1.5rem, $Black);padding: 0;width: 80vw;left: 5vw;height: 3rem;
+          &:hover{@include font(1.5rem, $White);}}}
+      .creations_grid{@include display(column, flex-start, flex-start);
+        .grid_item{width: 100%;height: 40vw;background-position: center;background-size: cover;background-repeat: no-repeat;
+          img{display: none;}
+          h3{font-size: 5vw;}
+          &:nth-child(1){background-image: url("/images/mobile/image-deep-earth.jpg");}
+          &:nth-child(2){background-image: url("/images/mobile/image-night-arcade.jpg");}
+          &:nth-child(3){background-image: url("/images/mobile/image-soccer-team.jpg");}
+          &:nth-child(4){background-image: url("/images/mobile/image-grid.jpg");}
+          &:nth-child(5){background-image: url("/images/mobile/image-from-above.jpg");}
+          &:nth-child(6){background-image: url("/images/mobile/image-pocket-borealis.jpg");}
+          &:nth-child(7){background-image: url("/images/mobile/image-curiosity.jpg");}
+          &:nth-child(8){background-image: url("/images/mobile/image-fisheye.jpg");}
+          &:hover{filter: unset;
+            h3{@include font(5vw, $White);}}}}}}
+}
+@media only screen and (max-width: 450px){
+  main{margin-bottom: 3rem;
+    .leader{
+      .leader_art{
+        h2{@include font(9vw, $Black);}
+        p{@include font(4vw, $DarkGray);line-height: 7vw;margin-top: 3vw;}}}
+    .Creations{
+      .creations_art_header{
+        h2{@include font(9vw, $Black);}
+        button{bottom: -4rem;@include font(5vw, $Black);width: 80vw;height: 10vw;
+          &:hover{@include font(5vw, $White);}}}
+      .creations_grid{@include display(column, flex-start, flex-start);
+        .grid_item{width: 100%;height: 60vw;
+          h3{bottom: 5vw;font-size: 7vw;padding: 0vw 5vw;}}}}}
+}
+
+
 footer{
   @include Setposition(relative,0,0);
   @include display(column,flex-start,flex-start);
@@ -341,4 +468,42 @@ footer{
       @include font(1rem, $DarkGray);
     }
   }
+}
+
+@media only screen and (max-width: 1200px){
+  footer{padding: 5vw;}
+}
+@media only screen and (max-width: 750px){
+  footer{padding-bottom: 5rem;
+    .media{@include display(column,center,center);
+      .media_logo{width: 12rem;}
+      .social{position: absolute; bottom: 3rem;
+        .social_icon{margin: 0 2rem;
+          &:nth-child(4){margin-right: 2rem;}}}}
+    .f_nav{@include display(column,center,space-between);margin-top: 2rem;margin-bottom: 2rem;
+      .f_nav_list{@include display(row,center,flex-start);margin-bottom: 1.5rem;
+        .f_nav_item{@include font(1.4rem, $White);margin: 0 1rem;}}
+      .copyRight{@include font(1.1rem, $DarkGray);}}}
+}
+@media only screen and (max-width: 550px){
+  footer{
+    .media{
+      .media_logo{width: 15rem;}
+      .social{
+        .social_icon{width: 2rem;height: 2rem;}}}
+    .f_nav{
+      .f_nav_list{@include display(column,center,flex-start);margin-bottom: 1.5rem;
+        .f_nav_item{@include font(1.8rem, $White);margin: 0 0rem 1.5rem 0rem;}}}}
+}
+@media only screen and (max-width: 450px){
+  footer{
+    .media{
+      .media_logo{width: 50vw;}
+      .social{bottom: 18vw;
+        .social_icon{margin: 0 4vw;width: 8vw;height: 8vw;
+          &:nth-child(4){margin-right: 4vw;}}}}
+    .f_nav{
+      .f_nav_list{@include display(column,center,flex-start);margin-bottom: 3vw;
+        .f_nav_item{@include font(6vw, $White);margin: 0 0rem 3vw 0rem;}}
+      .copyRight{width: 100%;text-align: center;@include font(5vw, $DarkGray);}}}
 }
