@@ -82,15 +82,6 @@ body {
   overflow-x: hidden;
 }
 
-.design {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2000000000000000000000000000;
-  opacity: 0.6;
-  display: none;
-}
-
 header {
   position: relative;
   top: 0;
@@ -252,12 +243,15 @@ header .title .title_h {
     display: block;
     width: 1.8rem;
     height: 1.2rem;
-    z-index: 1;
+    z-index: 400000;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
   }
   header .nav .nav_options {
     position: fixed;
     top: 0;
     left: -100vw;
+    opacity: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -284,6 +278,9 @@ header .title .title_h {
     color: #8c8c8c;
     margin: 1rem 0rem;
     text-transform: uppercase;
+    opacity: 0;
+    position: relative;
+    top: -20px;
   }
   header .nav .nav_options .nav_option::before {
     left: 0;
