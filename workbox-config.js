@@ -1,10 +1,9 @@
 module.exports = {
-  "globDirectory": "src/",
+  "globDirectory": "./",
   "globPatterns": [
-    // "**/*.{html}",
-    "**/*.{html,js,css}",
-    "../images/**/*.{img,png,svg,jpg,jpeg}"
+    "**/*.{html,js,css,scss}",
+    "images/**/*.{img,png,svg,jpg,jpeg}"
   ],
-  "swDest": "src/sw.js",
-  "swSrc" : "src/src-sw.js"
+  "swDest": "sw.js",
+  "swSrc" : "src-sw.js"
 };

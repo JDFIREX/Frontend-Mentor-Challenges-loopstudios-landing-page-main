@@ -12,12 +12,12 @@
 
   <link rel="apple-touch-icon" href="images/icons/apple-icon-180.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="/src/style.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/localbase/dist/localbase.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/faunadb@latest/dist/faunadb.js"></script>
-  <script type="module" src="./app.js"></script>
+  <script type="module" src="/src/app.js"></script>
 
   <title>Frontend Mentor | Loopstudios landing page</title>
 
@@ -53,3 +53,26 @@
   </div>
 </body>
 </html>
+
+
+
+<!-- 
+// style no ofline
+// workbox.core.skipWaiting()
+// workbox.core.clientsClaim() 
+
+//   workbox.routing.registerRoute( 
+//     "src/style.css",
+//     new workbox.strategies.NetworkFirst({ 
+//         cacheName : "css", 
+//         plugins : [ 
+//             new workbox.expiration.ExpirationPlugin({ 
+//                 maxEntries : 30, 
+//                 maxAgeSeconds: 30000
+//             }) 
+//         ] 
+//     }) 
+// ); 
+
+
+// workbox.precaching.precacheAndRoute([])  -->

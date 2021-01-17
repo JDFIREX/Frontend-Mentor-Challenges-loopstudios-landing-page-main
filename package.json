@@ -2,7 +2,7 @@
   "name": "frontend-mentor-challenges-loopstudios-landing-page-main",
   "version": "1.0.0",
   "description": "The challenge - loopstudios-landing-page-main (https://www.frontendmentor.io)",
-  "main": "/src/js/app.js",
+  "main": "/src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
