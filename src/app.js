@@ -10,10 +10,11 @@ let db = new Localbase('db')
 const CreateDB = new Promise(resolve => {
 
     let addToDB = new Promise(added => {
-
-        db.collection('Header').add(client.query(
-            q.Get(q.Ref(q.Collection('Header'), '287512290876457473'))
-        ).then((ret) => ret = ret.data).then(ret => ret))
+        setTimeout(() => {
+            db.collection('Header').add(client.query(
+                q.Get(q.Ref(q.Collection('Header'), '287512290876457473'))
+            ).then((ret) => ret = ret.data).then(ret => ret))
+        }, 10);
     
         db.collection('Leader').add(client.query(
             q.Get(q.Ref(q.Collection('Leader'), '287512425134031361'))
