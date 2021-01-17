@@ -184,9 +184,10 @@ header{
   header{
     .nav{
       .nav_humb{display: block;width: 1.8rem;height: 1.2rem;z-index: 400000;transition: all .3s ease-in-out;}
-      .nav_options{@include Setposition(fixed, 0, -100vw);opacity: 0;@include display(column, flex-start,center);z-index: 2;width: 100%;height: 100%;background-color: $Black;padding: 0vw 5vw;
-        .nav_option{@include Josefin();@include font(3rem, $DarkGray);margin: 1rem 0rem;text-transform: uppercase;opacity: 0;position: relative;top: -20px;
+      .nav_options{@include Setposition(fixed, 0vw, -100vw);opacity: 0;@include display(column, flex-start,center);z-index: 2;width: 100%;height: 100%;background-color: $Black;padding: 0vw 5vw;
+        .nav_option{@include Josefin();@include font(2rem, $DarkGray);margin: 1rem 0rem;text-transform: uppercase;opacity: 0;position: relative;top: -20px;
           &::before{left: 0;bottom: -15%;}
+          &:nth-child(1){margin-top: 00vw;}
           &:hover{
             &::before{left: 0%;min-width: 50%;}}}}}
     .title{width: 90vw;padding: 4.5vw;
@@ -198,7 +199,7 @@ header{
     .hero_img{z-index: -2;display: none}
     .nav{
       .nav_options{
-        .nav_option{@include font(9vw, $DarkGray);margin: 1rem 0rem;}}
+        .nav_option{@include font(7vw, $DarkGray);margin: 1rem 0rem;}}
       .nav_humb{display: block;width: 2rem;height: 1.5rem;z-index: 1;}
       .nav_logo{z-index: 2;width: 15rem;}}
     .title{top: 40vw;padding: 5vw;
@@ -217,6 +218,7 @@ main{
   width: 100%;
   padding:11.5vw;
   padding-bottom: 11.2vw;
+  // background-color: red;
   .leader{
     @include Setposition(relative, 0, 0);
     width: 100%;

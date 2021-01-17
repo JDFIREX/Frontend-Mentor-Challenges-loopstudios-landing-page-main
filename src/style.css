@@ -249,7 +249,7 @@ header .title .title_h {
   }
   header .nav .nav_options {
     position: fixed;
-    top: 0;
+    top: 0vw;
     left: -100vw;
     opacity: 0;
     display: -webkit-box;
@@ -274,7 +274,7 @@ header .title .title_h {
   header .nav .nav_options .nav_option {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #8c8c8c;
     margin: 1rem 0rem;
     text-transform: uppercase;
@@ -285,6 +285,9 @@ header .title .title_h {
   header .nav .nav_options .nav_option::before {
     left: 0;
     bottom: -15%;
+  }
+  header .nav .nav_options .nav_option:nth-child(1) {
+    margin-top: 00vw;
   }
   header .nav .nav_options .nav_option:hover::before {
     left: 0%;
@@ -324,7 +327,7 @@ header .title .title_h {
     display: none;
   }
   header .nav .nav_options .nav_option {
-    font-size: 9vw;
+    font-size: 7vw;
     color: #8c8c8c;
     margin: 1rem 0rem;
   }
